@@ -13,6 +13,35 @@ TARGET_ENABLE_AUDIO_ULL := true
 # Inherit from sm8250-common
 $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
 
+# Include OpenGApps
+GAPPS_VARIANT := micro
+
+GAPPS_PRODUCT_PACKAGES += CalculatorGoogle \
+    PrebuiltDeskClockGoogle \
+    Maps \
+    Photos \
+    EditorsDocs \
+    Drive \
+    PrebuiltKeep \
+    EditorsSheets \
+    EditorsSlides \
+    talkback \
+    GoogleContacts \
+    LatinImeGoogle \
+    StorageManagerGoogle \
+    GoogleExtServices \
+    GoogleExtShared \
+    GCS \
+    TranslatePrebuilt \
+    ActionsServices \
+    WebViewGoogle \
+    Chrome \
+    GoogleDialer \
+    PrebuiltBugle \
+    Wallpapers
+
+GAPPS_FORCE_PACKAGE_OVERRIDES := true
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -38,3 +67,6 @@ PRODUCT_SOONG_NAMESPACES += \
 
 # Inherit from vendor blobs
 $(call inherit-product, vendor/xiaomi/alioth/alioth-vendor.mk)
+
+# OpenGapps Configuration
+$(call inherit-product, vendor/opengapps/build/opengapps-packages.mk)
