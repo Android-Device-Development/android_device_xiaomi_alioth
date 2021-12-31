@@ -15,6 +15,7 @@ $(call inherit-product, device/xiaomi/sm8250-common/kona.mk)
 
 # Include OpenGApps
 GAPPS_VARIANT := micro
+WITH_GMS := true
 
 GAPPS_PRODUCT_PACKAGES += CalculatorGoogle \
     PrebuiltDeskClockGoogle \
